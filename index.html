@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rozszerzona Rzeczywistość (AR) - Marker 3D</title>
+    <!-- Dołączenie bibliotek A-Frame oraz AR.js -->
+    <script src="https://aframe.io"></script>
+    <script src="https://githack.com"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
 
+    <!-- Scena AR z wyłączonym logo osadzania -->
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+        
+        <!-- Definicja zasobów (tutaj ładujesz swój model 3D) -->
+        <a-assets>
+            <!-- Zastąp poniższy URL linkiem do własnego modelu .gltf / .glb jeśli chcesz -->
+            <a-asset-item id="moj-model" src="https://githack.com"></a-asset-item>
+        </a-assets>
+
+        <!-- Detekcja domyślnego markera 'hiro' -->
+        <a-marker preset="hiro">
+            <!-- Wyświetlenie modelu 3D na markerze. Skala (scale) i pozycja (position) dostosowane do modelu -->
+            
+            
+        </a-marker>
+
+        <!-- Kamera, która renderuje widok z aparatu -->
+        
+
+    </a-scene>
+
+</body>
+</html>
