@@ -14,10 +14,9 @@
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
       
       <!-- Sekcja Twojego markera (zmień nazwę pliku .patt na swoją jeśli jest inna!) -->
-      <a-marker type="pattern" url="./marker.patt">
-        <!-- To się pojawi nad markerem (np. czerwony sześcian) -->
-        <a-box position="0 0.5 0" material="color: red; opacity: 0.8;"></a-box>
-      </a-marker>
+      <a-marker preset="hiro">
+  <a-box position="0 0.5 0" material="color: red; opacity: 0.8;"></a-box>
+</a-marker>
       
       <!-- Kamera potrzebna do wyświetlenia obrazu 3D -->
       
