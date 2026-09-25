@@ -11,13 +11,21 @@
    <body style="margin: 0px; overflow: hidden;">
     <!-- TUTAJ dodaliśmy obsługę kodów kreskowych (matrix 3x3) -->
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
-      <a-assets>
-        <img id="moje-zdjecie" src="./foto.png" crossorigin="anonymous">
-      </a-assets>
+      
       <!-- TUTAJ używamy gotowego szablonu o numerze 0 (nie potrzebujesz pliku .patt!) -->
       <a-marker type="barcode" value="0">
        <!-- Wklejamy zdjęcie: pochylone poziomo nad markerem, o wymiarach 1.5 x 1.5 metra -->
-        <a-image src="#moje-zdjecie" rotation="-60 0 0" position="0 0.3 0" width="1.5" height="1.5"material="shader: flat;"></a-image>
+        <!-- TUTAJ: Atrybut crossorigin musi być na samym początku linijki, przed src! -->
+        <!-- Zmieniliśmy też shader na "flat" i dodaliśmy np. src jako bezpośrednią ścieżkę -->
+        <a-image 
+          crossorigin="anonymous"
+          src="./foto.png" 
+          rotation="-60 0 0" 
+          position="0 0.3 0" 
+          width="1.5" 
+          height="1.5" 
+          material="shader: flat; src: ./foto.png;">
+        </a-image>
       </a-marker>
       
       
@@ -25,9 +33,4 @@
   </body>
 </html>
       
-      <!-- Kamera potrzebna do wyświetlenia obrazu 3D -->
       
-      
-    </a-scene>
-  </body>
-</html>
