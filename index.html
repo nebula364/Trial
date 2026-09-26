@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Moja Strona AR</title>
+    <title>Moja Strona potworek i AR</title>
     <!-- 1. POPRAWNE podpięcie biblioteki A-Frame -->
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    
-    <!-- 2. POPRAWNE podpięcie biblioteki AR.js przez githack -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-<script src="https://jsdelivr.net"></script>
+    <script src="https://jsdelivr.net"></script>
   </head>
    <body style="margin: 0px; overflow: hidden;">
     <!-- TUTAJ dodaliśmy obsługę kodów kreskowych (matrix 3x3) -->
@@ -15,10 +13,6 @@
       <!-- Poprawny system zarządzania zasobami -->
       <a-assets>
         <img id="moje-zdjecie" src="./foto.png" crossorigin="anonymous">
-          TUTAJ: Deklarujemy plik 3D Twojego potworka. 
-          Musisz pobrać fioletowego potworka z internetu w formacie .glb lub .gltf, 
-          nazwać go 'potworek.glb' i wrzucić do tego samego folderu na GitHubie.
-        -->
         <a-asset-item id="model-potworka" src="./potworek.glb"></a-asset-item>
       </a-assets>
           <!-- TUTAJ używamy gotowego szablonu o numerze 0 (nie potrzebujesz pliku .patt!) -->
