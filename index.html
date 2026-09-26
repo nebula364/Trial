@@ -15,11 +15,8 @@
       <a-assets>
         <img id="moje-zdjecie" src="./foto.png" crossorigin="anonymous">
       </a-assets>
-        <!-- 
-        TUTAJ: Reagujemy na Twój plik marker.patt leżący w tym samym folderze.
-        Upewnij się, że plik na GitHubie ma dokładnie taką nazwę, małymi literami!
-      -->
-      <a-marker type="pattern" url="./marker.patt">
+          <!-- TUTAJ używamy gotowego szablonu o numerze 0 (nie potrzebujesz pliku .patt!) -->
+      <a-marker type="barcode" value="0">
        <!-- Wklejamy zdjęcie: pochylone poziomo nad markerem, o wymiarach 1.5 x 1.5 metra -->
         <!-- TUTAJ: Atrybut crossorigin musi być na samym początku linijki, przed src! -->
         <!-- Zmieniliśmy też shader na "flat" i dodaliśmy np. src jako bezpośrednią ścieżkę -->
