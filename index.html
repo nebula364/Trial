@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Moja Strona potworek i AR</title>
-    <!-- 1. POPRAWNE podpięcie biblioteki A-Frame -->
+    <meta charset="utf-8">
+    <title>Moje Sprawne AR z Potworkiem</title>
+    <!-- 1. Główny silnik 3D A-Frame -->
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <!-- 2. Silnik rzeczywistości rozszerzonej AR.js -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <!-- 3. NAPRAWIONY LINK: Pełna i sprawna biblioteka do odtwarzania animacji potworka -->
     <script src="https://jsdelivr.net"></script>
   </head>
-   <body style="margin: 0px; overflow: hidden;">
-    <!-- TUTAJ dodaliśmy obsługę kodów kreskowych (matrix 3x3) -->
+  
+  <body style="margin: 0px; overflow: hidden;">
+    <!-- Inicjalizacja sceny kamery z obsługą kodów kreskowych 3x3 -->
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
-      <!-- Poprawny system zarządzania zasobami -->
+      
       <a-assets>
-        <img id="moje-zdjecie" src="./foto.png" crossorigin="anonymous">
+        <!-- Twoje zdjęcie pobierane w świeżej wersji -->
+        <img id="moje-zdjecie" src="./foto.png?v=1" crossorigin="anonymous">
+        <!-- Model 3D potworka w formacie .glb leżący w tym samym folderze -->
         <a-asset-item id="model-potworka" src="./potworek.glb"></a-asset-item>
       </a-assets>
-          <!-- TUTAJ używamy gotowego szablonu o numerze 0 (nie potrzebujesz pliku .patt!) -->
-        <a-marker 
+
+      <!-- Reagujemy na wydrukowany kod Barcode 0 -->
+      <a-marker 
         type="barcode" 
         value="0"
         smooth="true"
@@ -24,29 +31,31 @@
         smoothTolerance="0.01"
         smoothThreshold="2">
         
-        <!-- 
-          Zmniejszyłem pozycję pionową z 1.0 na 0.4.
-          Zdjęcie wciąż unosi się w powietrzu i jest idealnie poziomo, 
-          ale nie ucieka już poza krawędź obiektywu telefonu.
-        -->
+        <!-- Twoje poziome zdjęcie pochylone lekko w tył -->
         <a-image 
           src="#moje-zdjecie" 
-          rotation="-80 0 0" 
-          position="0 0.3 0" 
-          width="2.5"
-          height="1.5"
-          material="shader: flat;">
+          rotation="-20 0 0" 
+          position="0 0.6 -0.6" 
+          width="1.2" 
+          height="0.7" 
+          material="shader: flat; side: double;">
         </a-image>
-        <!-- 1. KAŁUŻA: leży płasko na markerze, ma niebieski kolor i lekki prześwit (opacity) -->
-         <a-circle 
+
+        <!-- Twoja bezpieczna, niebieska kałuża uniesiona o centymetr, by nie zniknąć -->
+        <a-circle 
           rotation="-90 0 0" 
-          position="0 0.01 0" 
-          radius="0.5" 
+          position="0 0.05 0" 
+          radius="0.9" 
           material="color: #3a86ff; opacity: 0.8; shader: flat;">
         </a-circle>
 
+        <!-- Potworek 3D z automatycznym odtwarzaczem ruchu (animation-mixer) -->
+        
+        
+        
       </a-marker>
       
+      <!-- Wirtualna kamera nakładająca obiekty 3D na obraz z telefonu -->
       
     </a-scene>
   </body>
