@@ -7,6 +7,7 @@
     
     <!-- 2. POPRAWNE podpięcie biblioteki AR.js przez githack -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script src="https://jsdelivr.net"></script>
   </head>
    <body style="margin: 0px; overflow: hidden;">
     <!-- TUTAJ dodaliśmy obsługę kodów kreskowych (matrix 3x3) -->
@@ -14,6 +15,11 @@
       <!-- Poprawny system zarządzania zasobami -->
       <a-assets>
         <img id="moje-zdjecie" src="./foto.png" crossorigin="anonymous">
+          TUTAJ: Deklarujemy plik 3D Twojego potworka. 
+          Musisz pobrać fioletowego potworka z internetu w formacie .glb lub .gltf, 
+          nazwać go 'potworek.glb' i wrzucić do tego samego folderu na GitHubie.
+        -->
+        <a-asset-item id="model-potworka" src="./potworek.glb"></a-asset-item>
       </a-assets>
           <!-- TUTAJ używamy gotowego szablonu o numerze 0 (nie potrzebujesz pliku .patt!) -->
         <a-marker 
@@ -37,7 +43,14 @@
           height="1.5"
           material="shader: flat;">
         </a-image>
-        
+        <!-- 1. KAŁUŻA: leży płasko na markerze, ma niebieski kolor i lekki prześwit (opacity) -->
+        <a-circle 
+          rotation="-90 0 0" 
+          position="0 0.01 0" 
+          radius="0.5" 
+          color="#3a86ff" 
+          material="opacity: 0.8; shader: flat;">
+        </a-circle>
       </a-marker>
       
       
