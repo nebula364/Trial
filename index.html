@@ -13,7 +13,7 @@
   
   <body style="margin: 0px; overflow: hidden;">
     <!-- Inicjalizacja sceny kamery z obsługą kodów kreskowych 3x3 -->
-    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3; videoTexture: true; sourceWidth: 640; sourceHeight: 480; displayWidth: 640; displayHeight: 480;">">
       
       <a-assets>
         <!-- Twoje zdjęcie pobierane w świeżej wersji -->
