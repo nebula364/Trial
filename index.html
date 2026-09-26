@@ -16,19 +16,28 @@
         <img id="moje-zdjecie" src="./foto.png" crossorigin="anonymous">
       </a-assets>
           <!-- TUTAJ używamy gotowego szablonu o numerze 0 (nie potrzebujesz pliku .patt!) -->
-      <a-marker type="barcode" value="0">
-       <!-- Wklejamy zdjęcie: pochylone poziomo nad markerem, o wymiarach 1.5 x 1.5 metra -->
-        <!-- TUTAJ: Atrybut crossorigin musi być na samym początku linijki, przed src! -->
-        <!-- Zmieniliśmy też shader na "flat" i dodaliśmy np. src jako bezpośrednią ścieżkę -->
+        <a-marker 
+        type="barcode" 
+        value="0"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance="0.01"
+        smoothThreshold="5">
+        
+        <!-- 
+          Zmniejszyłem pozycję pionową z 1.0 na 0.4.
+          Zdjęcie wciąż unosi się w powietrzu i jest idealnie poziomo, 
+          ale nie ucieka już poza krawędź obiektywu telefonu.
+        -->
         <a-image 
-          crossorigin="anonymous"
-          src="./foto.png" 
+          src="#moje-zdjecie" 
           rotation="-90 0 0" 
-          position="0 1 0" 
+          position="0 0.4 0" 
           width="1.5" 
           height="1.5" 
-          material="shader: flat; src: ./foto.png;">
+          material="shader: flat;">
         </a-image>
+        
       </a-marker>
       
       
