@@ -21,13 +21,8 @@
         <!-- Model 3D potworka w formacie .glb leżący w tym samym folderze -->
         <a-asset-item id="model-potworka" src="./potworek.glb"></a-asset-item>
       </a-assets>
-
-      <!-- Reagujemy na wydrukowany kod Barcode 0 -->
-      <a-marker 
-        type="barcode" 
-        value="0"
-        smooth="true"
-        smoothCount="5">
+   
+      <a-marker type="custom" url="marker.patt">
         
         <!-- Twoje poziome zdjęcie pochylone lekko w tył -->
         <a-image 
