@@ -1,57 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Moje Sprawne AR z Potworkiem</title>
-    <!-- 1. Główny silnik 3D A-Frame -->
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <!-- 2. Silnik rzeczywistości rozszerzonej AR.js -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <!-- 3. NAPRAWIONY LINK: Pełna i sprawna biblioteka do odtwarzania animacji potworka -->
-    <script src="https://unpkg.com"></script>
-  </head>
-  
-  <body style="margin: 0px; overflow: hidden;">
-    <!-- Inicjalizacja sceny kamery z obsługą kodów kreskowych 3x3 -->
-    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
-      
-      <a-assets>
-        <!-- Twoje zdjęcie pobierane w świeżej wersji -->
-        <img id="moje-zdjecie" src="./foto.png?v=1" crossorigin="anonymous">
-        <!-- Model 3D potworka w formacie .glb leżący w tym samym folderze -->
-        <a-asset-item id="model-potworka" src="./potworek.glb"></a-asset-item>
-      </a-assets>
-   
-      <a-marker type="custom" url="marker.patt">
-        
-        <!-- Twoje poziome zdjęcie pochylone lekko w tył -->
-        <a-image 
-          src="#moje-zdjecie" 
-          rotation="-20 0 0" 
-          position="0 0.6 -0.6" 
-          width="1.2" 
-          height="0.7" 
-          material="shader: flat; side: double;">
-        </a-image>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Mój Stworek 3D w AR</title>
+    <!-- Import bibliotek A-Frame oraz AR.js -->
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0px; overflow: hidden;">
 
-        <!-- Twoja bezpieczna, niebieska kałuża uniesiona o centymetr, by nie zniknąć -->
-        <a-circle 
-          rotation="0 0 0" 
-          position="0 0.02 0" 
-          radius="0.8" 
-          material="color: #3a86ff; opacity: 0.8; shader: flat;">
-        </a-circle>
+    <!-- Inicjalizacja sceny AR ukrywającej zbędne napisy -->
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+        
+        <!-- Definicja zasobów (Twojego stworka 3D) -->
+        <a-assets>
+            <a-asset-item id="stworek" src="stworek.glb"></a-asset-item>
+        </a-assets>
 
-        <!-- Potworek 3D z automatycznym odtwarzaczem ruchu (animation-mixer) -->
+        <!-- Definicja Twojego własnego markera z kodem QR -->
+        <!-- Podmień 'pattern-qr.patt' na dokładną nazwę swojego pliku markera -->
+        <a-marker type="pattern" url="marker.patt">
+            
+            <!-- Wyświetlenie stworka na markerze -->
+            <!-- Skala (scale) i pozycja (position) mogą wymagać dopasowania do Twojego modelu -->
+            
+            
+
+        </a-marker>
+
+        <!-- Kamera AR, która szuka markera przez obiektyw telefonu -->
         
-        
-        
-      </a-marker>
-      
-      <!-- Wirtualna kamera nakładająca obiekty 3D na obraz z telefonu -->
-      
+
     </a-scene>
-  </body>
+
+</body>
 </html>
       
       
