@@ -18,6 +18,8 @@
         <a-assets>
             <!-- Wczytanie pliku 3D stworka -->
             <a-asset-item id="stworekModel" src="stworek.glb"></a-asset-item>
+            <a-asset-item id="stworekModel2" src="stworek2.glb"></a-asset-item>
+            <a-asset-item id="stworekModel3" src="stworek3.glb"></a-asset-item>
         </a-assets>
 
     <a-marker type="barcode" value="0">
@@ -33,6 +35,35 @@
                 rotation="0 0 0"
                 scale="3 3 3">
             </a-gltf-model>
+           </a-marker>
+        <a-marker type="barcode" value="3">
+
+        <!-- Pozycjonowanie na pierwszym markerze z pliku .mind -->
+        
+            
+            <!-- Twój stworek 3D -->
+            <!-- rotation="90 0 0" sprawia, że stworek stoi pionowo na leżącym kodzie QR -->
+            <a-gltf-model 
+                src="#stworekModel2" 
+                position="0 -0.5 -1"
+                rotation="0 0 0"
+                scale="3 3 3">
+            </a-gltf-model>
+               </a-marker>
+            <a-marker type="barcode" value="5">
+
+        <!-- Pozycjonowanie na pierwszym markerze z pliku .mind -->
+        
+            
+            <!-- Twój stworek 3D -->
+            <!-- rotation="90 0 0" sprawia, że stworek stoi pionowo na leżącym kodzie QR -->
+            <a-gltf-model 
+                src="#stworekModel3" 
+                position="0 -0.5 -1"
+                rotation="0 0 0"
+                scale="3 3 3">
+            </a-gltf-model>
+                   </a-marker>
                 animation="property: rotation; from: 0 0 -15; to: 0 0 15; loop: true; dir: alternate; dur: 1500; easing: easeInOutQuad">
 
     </a-scene>
