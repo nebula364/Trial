@@ -34,7 +34,12 @@
                 scale="3 3 3">
             </a-gltf-model>
 
-        
+         <!-- Stworek z dwiema automatycznymi animacjami -->
+            
+                animation__rotation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear"
+                
+                <!-- ANIMACJA 2: Delikatne unoszenie w górę i w dół (lewitacja) -->
+                animation__position="property: position; from: 0 -0.5 -1; to: 0 -0.3 -1; loop: true; dir: alternate; dur: 2000; easing: easeInOutQuad">
 
     </a-scene>
 
